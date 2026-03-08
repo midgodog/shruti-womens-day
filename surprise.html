@@ -64,34 +64,6 @@ margin:auto;
 padding:20px;
 }
 
-/* HEADER */
-
-.header{
-text-align:center;
-margin-bottom:20px;
-}
-
-.hello{
-font-family:'Pacifico',cursive;
-font-size:36px;
-color:#ff4da6;
-text-align:center;
-}
-
-.name{
-font-weight:800;
-font-size:40px;
-background:linear-gradient(90deg,var(--rose),var(--violet));
--webkit-background-clip:text;
-color:transparent;
-text-align:center;
-}
-
-.sub{
-color:var(--muted);
-text-align:center;
-}
-
 /* GRID */
 
 .grid{
@@ -121,6 +93,32 @@ border-radius:999px;
 font-size:14px;
 display:inline-block;
 margin-bottom:10px;
+}
+
+/* TITLE CARD */
+
+.title-card{
+text-align:center;
+grid-column:1/-1;
+}
+
+.title-card h1{
+font-family:'Pacifico';
+color:#ff4da6;
+font-size:34px;
+margin-bottom:6px;
+}
+
+.title-card h2{
+font-size:38px;
+background:linear-gradient(90deg,#ff4d8d,#7b5cff);
+-webkit-background-clip:text;
+color:transparent;
+margin-bottom:6px;
+}
+
+.title-card p{
+color:#7a7a7a;
 }
 
 /* ENVELOPE */
@@ -271,24 +269,6 @@ width:100%;
 text-align:center;
 }
 
-/* MOBILE */
-
-@media(max-width:600px){
-
-.hello{
-font-size:30px;
-}
-
-.name{
-font-size:34px;
-}
-
-.container{
-padding:15px;
-}
-
-}
-
 </style>
 </head>
 
@@ -296,15 +276,19 @@ padding:15px;
 
 <div class="container">
 
-<header class="header">
-
-<div class="hello">Happy Women's Day 🌷</div>
-<div class="name">Shruti</div>
-<div class="sub">A little tulip for you 🌷</div>
-
-</header>
-
 <section class="grid">
+
+<!-- TITLE CARD -->
+
+<div class="card title-card">
+
+<h1>Happy Women's Day 🌷</h1>
+<h2>Shruti</h2>
+<p>A little tulip for you 🌷</p>
+
+</div>
+
+<!-- MESSAGE -->
 
 <div class="card">
 
@@ -326,6 +310,8 @@ padding:15px;
 </div>
 
 </div>
+
+<!-- GALLERY -->
 
 <div class="card">
 
@@ -349,6 +335,8 @@ padding:15px;
 
 </div>
 
+<!-- NOTES -->
+
 <div class="card">
 
 <span class="pill">📝 Little Notes</span>
@@ -362,6 +350,8 @@ padding:15px;
 </div>
 
 </div>
+
+<!-- SONGS -->
 
 <div class="card">
 
@@ -399,6 +389,8 @@ Made with ❤ by miduuuuu
 </footer>
 
 </div>
+
+<!-- MODAL -->
 
 <div class="modal" id="letterModal">
 
