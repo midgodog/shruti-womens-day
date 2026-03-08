@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Happy Women's Day Shruti 🌷</title>
 
@@ -16,14 +15,10 @@ box-sizing:border-box;
 margin:0;
 padding:0;
 }
-html {
-font-size:16px;
-}
+
 html,body{
 width:100%;
-max-width:100%;
 overflow-x:hidden;
-touch-action:pan-x pan-y pinch-zoom;
 font-family:'Poppins',sans-serif;
 }
 
@@ -43,9 +38,6 @@ background:
 radial-gradient(600px 400px at 80% -10%, #ffe5f2 20%, transparent 60%),
 radial-gradient(500px 300px at -10% 0%, #efe9ff 20%, transparent 60%),
 var(--bg);
-
-background-repeat:no-repeat;
-background-size:cover;
 }
 
 /* floating tulips */
@@ -68,7 +60,7 @@ opacity:0;
 
 .container{
 width:100%;
-max-width:100%;
+max-width:480px;
 margin:auto;
 padding:20px;
 }
@@ -80,9 +72,11 @@ display:grid;
 gap:18px;
 }
 
-@media(min-width:600px){
+@media(min-width:700px){
 .grid{
 grid-template-columns:1fr 1fr;
+max-width:900px;
+margin:auto;
 }
 }
 
@@ -133,7 +127,7 @@ color:#7a7a7a;
 /* ENVELOPE */
 
 .envelope{
-width:240px;
+width:220px;
 margin:auto;
 position:relative;
 aspect-ratio:1.1/1;
@@ -209,11 +203,10 @@ font-weight:600;
 display:flex;
 gap:12px;
 overflow-x:auto;
-max-width:100%;
 }
 
 .imgcard{
-min-width:140px;
+min-width:120px;
 border-radius:16px;
 overflow:hidden;
 box-shadow:var(--shadow);
@@ -264,7 +257,6 @@ place-items:center;
 background:rgba(0,0,0,.5);
 z-index:10;
 padding:20px;
-touch-action:auto;
 }
 
 .modal.open{
@@ -275,35 +267,9 @@ display:grid;
 background:white;
 border-radius:22px;
 padding:26px;
-max-width:500px;
+max-width:420px;
 width:100%;
 text-align:center;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-.container{
-padding:15px;
-}
-
-.title-card h1{
-font-size:28px;
-}
-
-.title-card h2{
-font-size:32px;
-}
-
-.envelope{
-width:220px;
-}
-
-.imgcard{
-min-width:120px;
-}
-
 }
 
 </style>
@@ -415,6 +381,32 @@ Made with 🌷 by Miduuu
 
 </div>
 
+<div class="modal" id="letterModal">
+
+<div class="paper">
+
+<h3>Happy Women's Day Shruti 🌷</h3>
+
+<p>
+Wishing you a very Happy Women's Day!
+You are an amazing person and a wonderful friend.
+Your kindness and positivity make everyone around you happy.
+
+Keep smiling and shining always 🌷
+</p>
+
+<br>
+
+<b>Your friend,<br>Shreyas</b>
+
+<br><br>
+
+<button class="btn" id="closeModal">Close</button>
+
+</div>
+
+</div>
+
 <script>
 
 const envelope=document.getElementById("envelope")
@@ -423,22 +415,45 @@ const modal=document.getElementById("letterModal")
 const closeModal=document.getElementById("closeModal")
 
 function createTulip(){
+
 const tulip=document.createElement("span")
 tulip.className="tulip"
 tulip.innerHTML="🌷"
+
 tulip.style.left=Math.random()*100+"vw"
 tulip.style.fontSize=(16+Math.random()*24)+"px"
+
 document.body.appendChild(tulip)
+
 setTimeout(()=>tulip.remove(),5000)
+
 }
 
 setInterval(createTulip,700)
+
+function burstTulips(){
+for(let i=0;i<20;i++){createTulip()}
+}
+
+function openEnvelope(){
+
+envelope.classList.add("env-open")
+
+setTimeout(()=>{
+modal.classList.add("open")
+burstTulips()
+},600)
+
+}
+
+envelope.onclick=openEnvelope
+openBtn.onclick=openEnvelope
+
+closeModal.onclick=()=>{
+modal.classList.remove("open")
+}
 
 </script>
 
 </body>
 </html>
-
-
-
-
