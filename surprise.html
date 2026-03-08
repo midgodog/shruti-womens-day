@@ -36,10 +36,8 @@ font-family:'Poppins',sans-serif;
 body{
 background:
 radial-gradient(1000px 600px at 80% -10%, #ffe5f2 20%, transparent 60%),
-radial-gradient(900px 500px at -10% 0%, #efe9ff 20%, transparent 60%), 
+radial-gradient(900px 500px at -10% 0%, #efe9ff 20%, transparent 60%),
 var(--bg);
-max-width:100%;
-overflow-x:hidden;
 }
 
 /* floating tulips */
@@ -272,6 +270,32 @@ width:100%;
 text-align:center;
 }
 
+/* MOBILE */
+
+@media(max-width:600px){
+
+.container{
+padding:15px;
+}
+
+.title-card h1{
+font-size:28px;
+}
+
+.title-card h2{
+font-size:32px;
+}
+
+.envelope{
+width:220px;
+}
+
+.imgcard{
+min-width:120px;
+}
+
+}
+
 </style>
 </head>
 
@@ -281,17 +305,11 @@ text-align:center;
 
 <section class="grid">
 
-<!-- TITLE CARD -->
-
 <div class="card title-card">
-
 <h1>Happy Women's Day 🌷</h1>
 <h2>Shruti</h2>
 <p>A little tulip for you 🌷</p>
-
 </div>
-
-<!-- MESSAGE -->
 
 <div class="card">
 
@@ -313,8 +331,6 @@ text-align:center;
 </div>
 
 </div>
-
-<!-- GALLERY -->
 
 <div class="card">
 
@@ -338,8 +354,6 @@ text-align:center;
 
 </div>
 
-<!-- NOTES -->
-
 <div class="card">
 
 <span class="pill">📝 Little Notes</span>
@@ -353,8 +367,6 @@ text-align:center;
 </div>
 
 </div>
-
-<!-- SONGS -->
 
 <div class="card">
 
@@ -388,12 +400,10 @@ Your favorite songs 🎶
 </section>
 
 <footer class="footer">
-Made with ❤ by miduuuuu
+Made with 🌷 by Miduuu
 </footer>
 
 </div>
-
-<!-- MODAL -->
 
 <div class="modal" id="letterModal">
 
@@ -449,11 +459,7 @@ setTimeout(()=>tulip.remove(),5000)
 setInterval(createTulip,700)
 
 function burstTulips(){
-
-for(let i=0;i<20;i++){
-createTulip()
-}
-
+for(let i=0;i<20;i++){createTulip()}
 }
 
 function openEnvelope(){
@@ -478,4 +484,3 @@ modal.classList.remove("open")
 
 </body>
 </html>
-
