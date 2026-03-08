@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Women's Day Shruti 🌷</title>
@@ -16,10 +17,12 @@ margin:0;
 padding:0;
 }
 
-html, body{
+html,body{
 width:100%;
 max-width:100%;
 overflow-x:hidden;
+touch-action:pan-x pan-y pinch-zoom;
+font-family:'Poppins',sans-serif;
 }
 
 :root{
@@ -96,7 +99,7 @@ display:inline-block;
 margin-bottom:10px;
 }
 
-/* TITLE CARD */
+/* TITLE */
 
 .title-card{
 text-align:center;
@@ -201,6 +204,7 @@ font-weight:600;
 display:flex;
 gap:12px;
 overflow-x:auto;
+max-width:100%;
 }
 
 .imgcard{
@@ -255,6 +259,7 @@ place-items:center;
 background:rgba(0,0,0,.5);
 z-index:10;
 padding:20px;
+touch-action:auto;
 }
 
 .modal.open{
@@ -405,35 +410,6 @@ Made with 🌷 by Miduuu
 
 </div>
 
-<div class="modal" id="letterModal">
-
-<div class="paper">
-
-<h3>Happy Women's Day Shruti 🌷</h3>
-
-<p>
-Wishing you a very Happy Women's Day!
-
-You are an amazing person and a wonderful friend.
-Your kindness and positivity make everyone around you happy.
-
-Keep smiling, keep shining, and keep being the amazing person you are.
-
-Hope these tulips brighten your day 🌷
-</p>
-
-<br>
-
-<b>Your friend,<br>Shreyas</b>
-
-<br><br>
-
-<button class="btn" id="closeModal">Close</button>
-
-</div>
-
-</div>
-
 <script>
 
 const envelope=document.getElementById("envelope")
@@ -442,48 +418,18 @@ const modal=document.getElementById("letterModal")
 const closeModal=document.getElementById("closeModal")
 
 function createTulip(){
-
 const tulip=document.createElement("span")
 tulip.className="tulip"
 tulip.innerHTML="🌷"
-
 tulip.style.left=Math.random()*100+"vw"
 tulip.style.fontSize=(16+Math.random()*24)+"px"
-
 document.body.appendChild(tulip)
-
 setTimeout(()=>tulip.remove(),5000)
-
 }
 
 setInterval(createTulip,700)
-
-function burstTulips(){
-for(let i=0;i<20;i++){createTulip()}
-}
-
-function openEnvelope(){
-
-envelope.classList.add("env-open")
-
-setTimeout(()=>{
-modal.classList.add("open")
-burstTulips()
-},600)
-
-}
-
-envelope.onclick=openEnvelope
-openBtn.onclick=openEnvelope
-
-closeModal.onclick=()=>{
-modal.classList.remove("open")
-}
 
 </script>
 
 </body>
 </html>
-
-
-
